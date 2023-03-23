@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmjxoyi4cl5wp"]
+
+[ext_resource type="Texture2D" uid="uid://dmia8w5vswqgp" path="res://assets/colored_transparent.png" id="1_3qd73"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_on1lh"]
+size = Vector2(16, 16)
+
+[node name="Box" type="RigidBody2D" groups=["pushable"]]
+collision_layer = 4
+collision_mask = 7
+can_sleep = false
+
+[node name="Sprite2d" type="Sprite2D" parent="."]
+texture = ExtResource("1_3qd73")
+region_enabled = true
+region_rect = Rect2(391, 34, 16, 16)
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_on1lh")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://rjvvckfxki7d"]
+
+[ext_resource type="Script" path="res://moving_platform_tween.gd" id="1_a23d5"]
+[ext_resource type="Texture2D" uid="uid://dmia8w5vswqgp" path="res://assets/colored_transparent.png" id="2_5t84f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gn2y"]
+size = Vector2(42, 7)
+
+[node name="MovingPlatformTween" type="Node2D"]
+script = ExtResource("1_a23d5")
+
+[node name="AnimatableBody2d" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2d3" type="Sprite2D" parent="AnimatableBody2d"]
+texture_repeat = 2
+position = Vector2(-16, 0)
+texture = ExtResource("2_5t84f")
+region_enabled = true
+region_rect = Rect2(357, 102, 16, 16)
+
+[node name="Sprite2d2" type="Sprite2D" parent="AnimatableBody2d"]
+texture_repeat = 2
+texture = ExtResource("2_5t84f")
+region_enabled = true
+region_rect = Rect2(374, 102, 16, 16)
+
+[node name="Sprite2d4" type="Sprite2D" parent="AnimatableBody2d"]
+texture_repeat = 2
+position = Vector2(16, 0)
+texture = ExtResource("2_5t84f")
+region_enabled = true
+region_rect = Rect2(391, 102, 16, 16)
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="AnimatableBody2d"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_2gn2y")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://i243o0n3tdwo"]
+
+[ext_resource type="Script" path="res://item.gd" id="1_b127d"]
+[ext_resource type="Texture2D" uid="uid://dmia8w5vswqgp" path="res://assets/colored_transparent.png" id="2_0qkua"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hva2w"]
+radius = 5.0
+
+[node name="Item" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_b127d")
+
+[node name="Sprite2d" type="Sprite2D" parent="."]
+texture = ExtResource("2_0qkua")
+region_enabled = true
+region_rect = Rect2(374, 68, 16, 16)
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hva2w")
+
+[connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]

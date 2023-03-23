@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://bixt58mp3i788"]
+
+[ext_resource type="Texture2D" uid="uid://dmia8w5vswqgp" path="res://assets/colored_transparent.png" id="1_ombnx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gn2y"]
+size = Vector2(44, 7)
+
+[sub_resource type="Animation" id="Animation_d5uj8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2d:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gieow"]
+resource_name = "move"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2d:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(90, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oelng"]
+_data = {
+"RESET": SubResource("Animation_d5uj8"),
+"move": SubResource("Animation_gieow")
+}
+
+[node name="MovingPlatformAnim" type="Node2D"]
+
+[node name="AnimatableBody2d" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2d" type="Sprite2D" parent="AnimatableBody2d"]
+texture_repeat = 2
+texture = ExtResource("1_ombnx")
+region_enabled = true
+region_rect = Rect2(374, 102, 16, 16)
+
+[node name="Sprite2d2" type="Sprite2D" parent="AnimatableBody2d"]
+texture_repeat = 2
+position = Vector2(-16, 0)
+texture = ExtResource("1_ombnx")
+region_enabled = true
+region_rect = Rect2(357, 102, 16, 16)
+
+[node name="Sprite2d3" type="Sprite2D" parent="AnimatableBody2d"]
+texture_repeat = 2
+position = Vector2(16, 0)
+texture = ExtResource("1_ombnx")
+region_enabled = true
+region_rect = Rect2(391, 102, 16, 16)
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="AnimatableBody2d"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_2gn2y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "move"
+libraries = {
+"": SubResource("AnimationLibrary_oelng")
+}
