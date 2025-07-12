@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b74bmaye85g61"]
 
-[ext_resource type="Script" path="res://debug_overlay/debug_stats.gd" id="1_npvs2"]
+[ext_resource type="Script" uid="uid://cw5w8o4xwv0qu" path="res://debug_overlay/debug_stats.gd" id="1_npvs2"]
 
 [node name="DebugStats" type="MarginContainer"]
 anchors_preset = 15

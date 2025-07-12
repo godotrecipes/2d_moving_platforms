@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/playerRed_hit.png-24d572410df6d8d1f3189979d73
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

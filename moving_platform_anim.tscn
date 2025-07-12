@@ -39,8 +39,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oelng"]
 _data = {
-"RESET": SubResource("Animation_d5uj8"),
-"move": SubResource("Animation_gieow")
+&"RESET": SubResource("Animation_d5uj8"),
+&"move": SubResource("Animation_gieow")
 }
 
 [node name="MovingPlatformAnim" type="Node2D"]
